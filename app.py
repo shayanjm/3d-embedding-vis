@@ -12,7 +12,7 @@ if uploaded_file is not None:
     df_visualization = pd.read_csv(uploaded_file)
 
     # Truncate the 'Prompt' text to a maximum of 50 characters
-    df_visualization['Truncated_Prompt'] = df_visualization['Prompt'].apply(lambda x: (x[:97] + '...') if len(x) > 100 else x)
+    df_visualization['Truncated_Prompt'] = df_visualization['Prompt'].apply(lambda x: (x[:297] + '...') if len(x) > 300 else x)
 
     # Create the scatter plot
     fig = px.scatter_3d(df_visualization, x='Dimension 1', y='Dimension 2', z='Dimension 3', color='Cluster',
